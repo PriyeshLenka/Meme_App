@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/black"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/memeImageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/shareButton"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/spin_kit"
+        style="@style/SpinKitView.Large.FoldingCube"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:SpinKit_Color="#DFEC4D37"
+        app:layout_constraintBottom_toTopOf="@id/shareButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:onClick="shareMeme"
+        android:padding="32dp"
+        android:backgroundTint="#F2AA4C"
+        android:textColor="#101820"
+        android:text="@string/share"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="181dp"
+        android:layout_height="wrap_content"
+        android:onClick="nextMeme"
+        android:textColor="#101820"
+        android:backgroundTint="#F2AA4C"
+        android:padding="32dp"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
+
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="49dp"
+        android:onClick="about"
+        android:layout_height="51dp"
+        app:layout_constraintHorizontal_bias="0.923"
+        app:layout_constraintLeft_toRightOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_info_details" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
